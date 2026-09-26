@@ -1,0 +1,32 @@
+You are evaluating the paths explored by one mid-memory graph agent. Select zero to {{MAX_PATHS}} paths that provide valuable, non-redundant evidence for answering the question. Do not answer the question itself.
+
+## Question
+
+{{QUESTION}}
+
+## Question-type strategy
+
+{{QUESTION_STRATEGY}}
+
+## Seed agent
+
+{{SEED_ID}}
+
+## Candidate paths
+
+{{PATHS}}
+
+## Selection rules
+
+1. You may select no path when this seed and every explored path are irrelevant or too speculative.
+2. Select multiple paths only when they contain complementary answer-bearing evidence, such as time plus event, cause plus outcome, or independent supporting details.
+3. Do not select a path whose useful nodes and facts are already fully covered by another selected path. Prefer the shorter path when evidence is equivalent.
+4. Reward relation types and traversal directions applicable to the question type only as a soft prior. Concrete descriptions and endpoint facts decide relevance.
+5. Penalize topical detours, repeated themes, speculative links, and hops that add no useful evidence.
+6. The zero-hop seed path is valid, but do not select it separately when a selected expanded path already contains the same seed and all its useful evidence.
+7. Each `value` must be from 0 to 1 and measure that path's marginal usefulness after considering the other selected paths.
+8. Return at most {{MAX_PATHS}} unique provided path IDs. Use an empty list when none is valuable.
+
+Return ONLY this JSON object, without markdown or extra fields:
+
+{"selected_paths":[{"path_id":"seed1-path2","value":0.86,"reason":"Adds the requested date."},{"path_id":"seed1-path4","value":0.74,"reason":"Adds the cause needed to connect the events."}],"reason":"The two paths provide complementary temporal and causal evidence."}

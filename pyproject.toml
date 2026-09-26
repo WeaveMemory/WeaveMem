@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weave-mem"
+version = "0.1.0"
+description = "Layered memory network for long-lived LLM agents: memory construction, a typed relation graph, and graph-navigating retrieval"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    "dashscope>=1.20",
+    "nltk==3.10.3",
+]
+
+[project.optional-dependencies]
+# Lexical normalization for BM25. The English model is downloaded lazily on first use,
+# or ahead of time with `python -m spacy download en_core_web_sm`.
+nlp = [
+    "click>=8.1,<9",
+    "spacy>=3.7,<4",
+]
+dev = [
+    "ruff>=0.6",
+]
+
+[project.scripts]
+weave-mem = "cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = ["config", "cli", "ingest", "checkpoint", "jsonio", "enriched_embeddings", "relation_graph"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"llm.prompts" = ["*.txt"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]

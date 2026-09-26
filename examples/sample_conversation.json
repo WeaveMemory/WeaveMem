@@ -1,0 +1,87 @@
+[
+  {
+    "sample_id": "conv-1",
+    "conversation": {
+      "speaker_a": "Alice",
+      "speaker_b": "Bob",
+      "session_1": [
+        {
+          "dia_id": "D1:1",
+          "speaker": "Alice",
+          "text": "I finally handed in my notice at the print shop today. Two weeks and I'm out."
+        },
+        {
+          "dia_id": "D1:2",
+          "speaker": "Bob",
+          "text": "That's huge. Do you have something lined up, or is this a jump?"
+        },
+        {
+          "dia_id": "D1:3",
+          "speaker": "Alice",
+          "text": "A bit of both. A small studio in Leeds offered me a junior bookbinding role. Less money, but they do restoration work."
+        },
+        {
+          "dia_id": "D1:4",
+          "speaker": "Bob",
+          "text": "Leeds is a long way from your sister though. Wasn't she the reason you stayed in Bristol?"
+        },
+        {
+          "dia_id": "D1:5",
+          "speaker": "Alice",
+          "text": "She moved to Manchester in the spring, so Leeds actually puts me closer to her than I am now.",
+          "query": "map of Bristol to Leeds route",
+          "blip_caption": "a road map with a highlighted route between two cities"
+        },
+        {
+          "dia_id": "D1:6",
+          "speaker": "Bob",
+          "text": "Then it sounds like the timing worked out. When do you start?"
+        },
+        {
+          "dia_id": "D1:7",
+          "speaker": "Alice",
+          "text": "First of next month. I'm keeping the cat, obviously, so I need a flat that allows pets."
+        }
+      ],
+      "session_1_date_time": "4:20 pm on 12 September, 2024",
+      "session_3": [
+        {
+          "dia_id": "D3:1",
+          "speaker": "Bob",
+          "text": "How's the studio? Still glad you took it?"
+        },
+        {
+          "dia_id": "D3:2",
+          "speaker": "Alice",
+          "text": "Mostly. The restoration side is everything I hoped. But they put me on ledger repairs, not books, so I'm learning a different craft than I expected."
+        },
+        {
+          "dia_id": "D3:3",
+          "speaker": "Bob",
+          "text": "Is that a problem for you long term?"
+        },
+        {
+          "dia_id": "D3:4",
+          "speaker": "Alice",
+          "text": "No, it turns out ledgers pay better. I'd rather build the skill that keeps me employed and do books on the side."
+        },
+        {
+          "dia_id": "D3:5",
+          "speaker": "Bob",
+          "text": "And the flat situation? Did the cat requirement narrow it down badly?"
+        },
+        {
+          "dia_id": "D3:6",
+          "speaker": "Alice",
+          "text": "Awfully. I ended up in a place in Headingley that's smaller than my old room, but the landlord has three cats himself so it was an easy yes."
+        },
+        {
+          "dia_id": "D3:7",
+          "speaker": "Alice",
+          "text": "My sister visits most weekends now. That part is genuinely better than Bristol ever was."
+        }
+      ],
+      "session_3_date_time": "9:05 am on 2 November, 2024"
+    }
+  }
+]

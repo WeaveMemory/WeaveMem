@@ -1,0 +1,20 @@
+Judge whether the retrieved mid-term memories contain enough information to answer the question fully and specifically. This is only a retrieval gate; do not answer the question.
+
+## Question
+
+{{QUESTION}}
+
+## Retrieved mid-term memories
+
+{{CONTEXT}}
+
+## Rules
+
+1. Judge only from the displayed topic and summary. Do not assume hidden child memories or graph neighbours.
+2. Set `sufficient=true` only when the memories contain a specific answer to every part of the question.
+3. If any requested fact, time, entity, reason, or step is absent or ambiguous, set `sufficient=false` and state exactly what is missing.
+4. When sufficient, `missing` must be empty. When insufficient, `missing` must be a concise non-empty string.
+
+Return ONLY this JSON object, without markdown or extra fields:
+
+{"sufficient":false,"missing":"the specific missing information"}

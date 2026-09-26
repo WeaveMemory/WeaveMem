@@ -1,0 +1,49 @@
+{
+  "benchmark": "beam",
+  "configuration_kind": "benchmark_specific_reconstruction",
+  "reference_version": "beam-1m",
+  "paper_parity_verified": false,
+  "models": {
+    "extraction": "glm-5.2",
+    "embedding": "text-embedding-v4",
+    "rerank": "qwen3-rerank",
+    "answer": "gpt-4o-mini",
+    "judge": "gpt-4.1-mini"
+  },
+  "build": {
+    "memory_types": [
+      "core",
+      "episodic",
+      "knowledge"
+    ],
+    "mid_prompt": "mid_extraction_beam"
+  },
+  "environment": {
+    "WEAVE_MEM_GRAPH_MAX_HOPS": "3",
+    "WEAVE_MEM_GRAPH_MAX_PATHS_PER_SEED": "5",
+    "WEAVE_MEM_GRAPH_COMPLETE_PATH_BUDGET": "10",
+    "WEAVE_MEM_GRAPH_CHILD_FACT_TOP_N": "10",
+    "WEAVE_MEM_GRAPH_CHILD_FACT_MIN_SCORE": "0.5",
+    "WEAVE_MEM_GRAPH_INITIAL_SEED_TOP_N": "5",
+    "WEAVE_MEM_GRAPH_INITIAL_RRF_TOP_N": "20",
+    "WEAVE_MEM_GRAPH_FALLBACK_SEED_TOP_N": "10",
+    "WEAVE_MEM_GRAPH_FALLBACK_RRF_TOP_N": "50",
+    "WEAVE_MEM_BM25_LEMMATIZATION": "0",
+    "WEAVE_MEM_BM25_LEMMATIZATION_AUTO_DOWNLOAD": "0",
+    "WEAVE_MEM_GLM_ENABLE_THINKING": "0",
+    "WEAVE_MEM_PATH_W_NODE": "0.6",
+    "WEAVE_MEM_PATH_W_TYPE": "0.2",
+    "WEAVE_MEM_PATH_W_DESC": "0.1",
+    "WEAVE_MEM_PATH_W_CONTROLLER": "0.1"
+  },
+  "prepare_options": {},
+  "answer": {
+    "temperature": 0,
+    "max_tokens": 20000,
+    "projection": "beam_mid_dialogue_state"
+  },
+  "judge": {
+    "temperature": 0,
+    "max_tokens": 2048
+  }
+}
